@@ -1,0 +1,5 @@
+datasources:84d271ba44bc1de89cfa6de2249ec9fbfde8e230
+commandlineoptions:4ddcb0d402014dc8a6c80e7eb29fd7ba2f58e519
+suitesfrom:no-suites-from-option
+file:0bdd60903a67f9e1c4892d62074bdc3c8756ff60
+--test WishList.TC_Add_DeleteProductFromWishList

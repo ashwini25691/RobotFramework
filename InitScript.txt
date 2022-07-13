@@ -1,0 +1,2 @@
+start cmd.exe /k "cd C:\Temp\RobotFramework & python Config\config.py & allure generate allure --clean -o allure\allure-report"
+

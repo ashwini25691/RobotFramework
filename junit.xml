@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WishList" tests="1" errors="0" failures="1" skipped="0" time="37.258">
+<testcase classname="WishList" name="TC_Add_DeleteProductFromWishList" time="4.444">
+<failure message="WebDriverException: Message: 'MicrosoftWebDriver.exe' executable needs to be in PATH. Please download from http://go.microsoft.com/fwlink/?LinkId=619687&#10;" type="AssertionError"></failure>
+</testcase>
+</testsuite>

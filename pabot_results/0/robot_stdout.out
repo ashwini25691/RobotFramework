@@ -1,0 +1,11 @@
+==============================================================================
+WishList                                                                      
+==============================================================================
+TC_Add_DeleteProductFromWishList                                      | FAIL |
+WebDriverException: Message: 'MicrosoftWebDriver.exe' executable needs to be in PATH. Please download from http://go.microsoft.com/fwlink/?LinkId=619687
+------------------------------------------------------------------------------
+WishList                                                              | FAIL |
+1 critical test, 0 passed, 1 failed
+1 test total, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Temp\RobotFramework\pabot_results\0\output.xml

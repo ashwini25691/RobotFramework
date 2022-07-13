@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.9.2 on win32)" generated="20210322 00:34:13.401" rpa="false">
+<suite id="s1" name="WishList" source="C:\Temp\RobotFramework\TestSuite\Regression\WishList.robot">
+<test id="s1-t1" name="TC_Add_DeleteProductFromWishList">
+<kw name="TestSetup" library="BC_CommonFunctions" type="setup">
+<kw name="Get Start and End Iterations" library="BC_CommonFunctions">
+<kw name="Get Test Iteration" library="TestData">
+<arguments>
+<arg>${TEST_NAME}</arg>
+<arg>Start_Iteration</arg>
+</arguments>
+<assign>
+<var>${StartIterations}</var>
+</assign>
+<msg timestamp="20210322 00:34:24.646" level="INFO">Start_Iteration
+0                1</msg>
+<msg timestamp="20210322 00:34:24.646" level="INFO">${StartIterations} = 1</msg>
+<status status="PASS" starttime="20210322 00:34:24.319" endtime="20210322 00:34:24.646"></status>
+</kw>
+<kw name="Get Test Iteration" library="TestData">
+<arguments>
+<arg>${TEST_NAME}</arg>
+<arg>End_Iteration</arg>
+</arguments>
+<assign>
+<var>${EndIterations}</var>
+</assign>
+<msg timestamp="20210322 00:34:24.693" level="INFO">End_Iteration
+0              1</msg>
+<msg timestamp="20210322 00:34:24.693" level="INFO">${EndIterations} = 2</msg>
+<status status="PASS" starttime="20210322 00:34:24.646" endtime="20210322 00:34:24.693"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${StartIterations}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.693" level="INFO">${StartIterations} = 1</msg>
+<status status="PASS" starttime="20210322 00:34:24.693" endtime="20210322 00:34:24.693"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${EndIterations}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.693" level="INFO">${EndIterations} = 2</msg>
+<status status="PASS" starttime="20210322 00:34:24.693" endtime="20210322 00:34:24.693"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.319" endtime="20210322 00:34:24.693"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.319" endtime="20210322 00:34:24.693"></status>
+</kw>
+<kw name="${intCurItr} IN RANGE [ ${StartIterations} | ${EndIterations} ]" type="for">
+<kw name="${intCurItr} = 1" type="foritem">
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${intCurItr}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.693" level="INFO">${intCurItr} = 1</msg>
+<status status="PASS" starttime="20210322 00:34:24.693" endtime="20210322 00:34:24.693"></status>
+</kw>
+<kw name="Create variables from testdata" library="BC_CommonFunctions">
+<doc>This keyword is to get the test data from the excel.</doc>
+<arguments>
+<arg>Regression</arg>
+</arguments>
+<kw name="Get Colmn Name" library="TestData">
+<arguments>
+<arg>${Sheet_Name}</arg>
+</arguments>
+<assign>
+<var>@{column_list}</var>
+</assign>
+<msg timestamp="20210322 00:34:24.756" level="INFO">@{column_list} = [ TestCase | Iteration | SubIteration | UserName | Password ]</msg>
+<status status="PASS" starttime="20210322 00:34:24.693" endtime="20210322 00:34:24.756"></status>
+</kw>
+<kw name="Initialize test data variables" library="BC_CommonFunctions">
+<doc>This keyword is to get the test data from the excel for Requisiton and PO related workflow.</doc>
+<arguments>
+<arg>${Sheet_Name}</arg>
+<arg>@{column_list}</arg>
+</arguments>
+<kw name="${colname} IN [ @{colNames} ]" type="for">
+<kw name="${colname} = TestCase" type="foritem">
+<kw name="Get Cell Data" library="TestData">
+<arguments>
+<arg>${sheetname}</arg>
+<arg>${colname}</arg>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20210322 00:34:24.756" level="INFO">Regression_ALL</msg>
+<msg timestamp="20210322 00:34:24.756" level="INFO">C:\Temp\RobotFramework</msg>
+<msg timestamp="20210322 00:34:24.756" level="INFO">C:\Temp\RobotFramework\TestData\Regression_ALL.xlsx</msg>
+<msg timestamp="20210322 00:34:24.756" level="INFO">TC_Add_DeleteProductFromWishList</msg>
+<msg timestamp="20210322 00:34:24.756" level="INFO">1</msg>
+<msg timestamp="20210322 00:34:24.865" level="INFO">TC_Add_DeleteProductFromWishList</msg>
+<msg timestamp="20210322 00:34:24.865" level="INFO">${data} = TC_Add_DeleteProductFromWishList</msg>
+<status status="PASS" starttime="20210322 00:34:24.756" endtime="20210322 00:34:24.865"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.881" level="INFO">${TestCase} = TC_Add_DeleteProductFromWishList</msg>
+<status status="PASS" starttime="20210322 00:34:24.865" endtime="20210322 00:34:24.881"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.881" level="INFO">TC_Add_DeleteProductFromWishList</msg>
+<status status="PASS" starttime="20210322 00:34:24.881" endtime="20210322 00:34:24.881"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.756" endtime="20210322 00:34:24.881"></status>
+</kw>
+<kw name="${colname} = Iteration" type="foritem">
+<kw name="Get Cell Data" library="TestData">
+<arguments>
+<arg>${sheetname}</arg>
+<arg>${colname}</arg>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20210322 00:34:24.881" level="INFO">Regression_ALL</msg>
+<msg timestamp="20210322 00:34:24.881" level="INFO">C:\Temp\RobotFramework</msg>
+<msg timestamp="20210322 00:34:24.881" level="INFO">C:\Temp\RobotFramework\TestData\Regression_ALL.xlsx</msg>
+<msg timestamp="20210322 00:34:24.881" level="INFO">TC_Add_DeleteProductFromWishList</msg>
+<msg timestamp="20210322 00:34:24.881" level="INFO">1</msg>
+<msg timestamp="20210322 00:34:24.928" level="INFO">1</msg>
+<msg timestamp="20210322 00:34:24.928" level="INFO">${data} = 1</msg>
+<status status="PASS" starttime="20210322 00:34:24.881" endtime="20210322 00:34:24.928"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.928" level="INFO">${Iteration} = 1</msg>
+<status status="PASS" starttime="20210322 00:34:24.928" endtime="20210322 00:34:24.928"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.928" level="INFO">1</msg>
+<status status="PASS" starttime="20210322 00:34:24.928" endtime="20210322 00:34:24.928"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.881" endtime="20210322 00:34:24.928"></status>
+</kw>
+<kw name="${colname} = SubIteration" type="foritem">
+<kw name="Get Cell Data" library="TestData">
+<arguments>
+<arg>${sheetname}</arg>
+<arg>${colname}</arg>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20210322 00:34:24.928" level="INFO">Regression_ALL</msg>
+<msg timestamp="20210322 00:34:24.928" level="INFO">C:\Temp\RobotFramework</msg>
+<msg timestamp="20210322 00:34:24.943" level="INFO">C:\Temp\RobotFramework\TestData\Regression_ALL.xlsx</msg>
+<msg timestamp="20210322 00:34:24.943" level="INFO">TC_Add_DeleteProductFromWishList</msg>
+<msg timestamp="20210322 00:34:24.943" level="INFO">1</msg>
+<msg timestamp="20210322 00:34:24.959" level="INFO">1</msg>
+<msg timestamp="20210322 00:34:24.959" level="INFO">${data} = 1</msg>
+<status status="PASS" starttime="20210322 00:34:24.928" endtime="20210322 00:34:24.959"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.975" level="INFO">${SubIteration} = 1</msg>
+<status status="PASS" starttime="20210322 00:34:24.959" endtime="20210322 00:34:24.975"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.975" level="INFO">1</msg>
+<status status="PASS" starttime="20210322 00:34:24.975" endtime="20210322 00:34:24.975"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.928" endtime="20210322 00:34:24.975"></status>
+</kw>
+<kw name="${colname} = UserName" type="foritem">
+<kw name="Get Cell Data" library="TestData">
+<arguments>
+<arg>${sheetname}</arg>
+<arg>${colname}</arg>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20210322 00:34:24.975" level="INFO">Regression_ALL</msg>
+<msg timestamp="20210322 00:34:24.975" level="INFO">C:\Temp\RobotFramework</msg>
+<msg timestamp="20210322 00:34:24.975" level="INFO">C:\Temp\RobotFramework\TestData\Regression_ALL.xlsx</msg>
+<msg timestamp="20210322 00:34:24.975" level="INFO">TC_Add_DeleteProductFromWishList</msg>
+<msg timestamp="20210322 00:34:24.975" level="INFO">1</msg>
+<msg timestamp="20210322 00:34:24.990" level="INFO">ashwini25691@gmail.com</msg>
+<msg timestamp="20210322 00:34:24.990" level="INFO">${data} = ashwini25691@gmail.com</msg>
+<status status="PASS" starttime="20210322 00:34:24.975" endtime="20210322 00:34:24.990"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.990" level="INFO">${UserName} = ashwini25691@gmail.com</msg>
+<status status="PASS" starttime="20210322 00:34:24.990" endtime="20210322 00:34:24.990"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:24.990" level="INFO">ashwini25691@gmail.com</msg>
+<status status="PASS" starttime="20210322 00:34:24.990" endtime="20210322 00:34:24.990"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.975" endtime="20210322 00:34:24.990"></status>
+</kw>
+<kw name="${colname} = Password" type="foritem">
+<kw name="Get Cell Data" library="TestData">
+<arguments>
+<arg>${sheetname}</arg>
+<arg>${colname}</arg>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20210322 00:34:24.990" level="INFO">Regression_ALL</msg>
+<msg timestamp="20210322 00:34:24.990" level="INFO">C:\Temp\RobotFramework</msg>
+<msg timestamp="20210322 00:34:24.990" level="INFO">C:\Temp\RobotFramework\TestData\Regression_ALL.xlsx</msg>
+<msg timestamp="20210322 00:34:24.990" level="INFO">TC_Add_DeleteProductFromWishList</msg>
+<msg timestamp="20210322 00:34:24.990" level="INFO">1</msg>
+<msg timestamp="20210322 00:34:25.021" level="INFO">VGVzdEAxMjM=</msg>
+<msg timestamp="20210322 00:34:25.021" level="INFO">${data} = VGVzdEAxMjM=</msg>
+<status status="PASS" starttime="20210322 00:34:24.990" endtime="20210322 00:34:25.021"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:25.021" level="INFO">${Password} = VGVzdEAxMjM=</msg>
+<status status="PASS" starttime="20210322 00:34:25.021" endtime="20210322 00:34:25.021"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${${colname}}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:25.021" level="INFO">VGVzdEAxMjM=</msg>
+<status status="PASS" starttime="20210322 00:34:25.021" endtime="20210322 00:34:25.021"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.990" endtime="20210322 00:34:25.021"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.756" endtime="20210322 00:34:25.021"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.756" endtime="20210322 00:34:25.021"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:24.693" endtime="20210322 00:34:25.021"></status>
+</kw>
+<kw name="Given I am on the WestwingNow home page" library="BC_CommonFunctions">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>%{Url}</arg>
+<arg>%{Browser}</arg>
+</arguments>
+<msg timestamp="20210322 00:34:25.021" level="INFO">Opening browser 'edge' to base url 'https://www.westwingnow.de/'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210322 00:34:25.170" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210322 00:34:25.170" endtime="20210322 00:34:25.170"></status>
+</kw>
+<msg timestamp="20210322 00:34:25.944" level="FAIL">WebDriverException: Message: 'MicrosoftWebDriver.exe' executable needs to be in PATH. Please download from http://go.microsoft.com/fwlink/?LinkId=619687
+</msg>
+<status status="FAIL" starttime="20210322 00:34:25.021" endtime="20210322 00:34:25.945"></status>
+</kw>
+<status status="FAIL" starttime="20210322 00:34:25.021" endtime="20210322 00:34:25.945"></status>
+</kw>
+<status status="FAIL" starttime="20210322 00:34:24.693" endtime="20210322 00:34:25.945"></status>
+</kw>
+<status status="FAIL" starttime="20210322 00:34:24.693" endtime="20210322 00:34:25.946"></status>
+</kw>
+<kw name="Close the Application" library="BC_CommonFunctions" type="teardown">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210322 00:34:25.947" endtime="20210322 00:34:25.947"></status>
+</kw>
+<status status="PASS" starttime="20210322 00:34:25.946" endtime="20210322 00:34:25.948"></status>
+</kw>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="FAIL" starttime="20210322 00:34:24.319" endtime="20210322 00:34:25.948" critical="yes">WebDriverException: Message: 'MicrosoftWebDriver.exe' executable needs to be in PATH. Please download from http://go.microsoft.com/fwlink/?LinkId=619687
+</status>
+</test>
+<status status="FAIL" starttime="20210322 00:34:13.403" endtime="20210322 00:34:25.950"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="WishList">WishList</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210322 00:34:24.319" level="ERROR">Error in file 'C:\Temp\RobotFramework\TestSuite\Regression\WishList.robot': Test library 'C:\Temp\RobotFramework\Utilities\Database.py' does not exist.</msg>
+</errors>
+</robot>
